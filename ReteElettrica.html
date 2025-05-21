@@ -6,6 +6,7 @@
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="assets/css/main.css">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 	</head>
 	<body class="subpage">
 
@@ -38,20 +39,95 @@
 
 		<!-- Two -->
 		<section id="two" class="wrapper style2">
-			<div class="inner">
-				<div class="box">
-					<div class="content">
-						<header class="align-center">
-							<p>maecenas sapien feugiat ex purus</p>
-							<h2>Lorem ipsum dolor</h2>
-						</header>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at dignissim augue, in iaculis neque. Etiam bibendum felis ac vulputate pellentesque. Cras non blandit quam. Nunc porta, est non posuere sagittis, neque nunc pellentesque diam, a iaculis lacus urna vitae purus. In non dui vel est tempor faucibus. Aliquam erat volutpat. Quisque vel est vitae nibh laoreet auctor. In nec libero dui. Nulla ullamcorper, dolor nec accumsan viverra, libero eros rutrum metus, vel lacinia magna odio non nunc. Praesent semper felis eu rhoncus aliquam. Donec at quam ac libero vestibulum pretium. Nunc faucibus vel arcu in malesuada. Aenean at velit odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas commodo erat eget molestie sollicitudin. Donec imperdiet, ex sed blandit dictum, ipsum metus ultrices arcu, vitae euismod nisl sapien vitae tortor.</p>
-						<p>Vivamus nec odio ac ligula congue feugiat at vitae leo. Aenean sem justo, finibus sed dui eu, accumsan facilisis dolor. Fusce quis dui eget odio iaculis aliquam vel sed velit. Nulla pellentesque posuere semper. Nulla eu sagittis lorem, a auctor nulla. Sed ac condimentum orci, ac varius ante. Nunc blandit quam sit amet sollicitudin sodales.</p>
-						<p>Vivamus ultricies mollis mauris quis molestie. Quisque eu mi velit. In et cursus nibh. Donec facilisis, orci sed mollis hendrerit, nunc risus mattis odio, eget efficitur nisl orci a lectus. Aenean finibus neque convallis orci sollicitudin tincidunt. Vivamus lacinia facilisis diam, quis facilisis nisi luctus nec. Aliquam ac molestie enim, ut ultrices elit. Fusce laoreet vulputate risus in tincidunt. Sed commodo mollis maximus. Nullam varius laoreet nibh sit amet facilisis. Donec ac odio vehicula, consequat elit et, sodales justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam ac auctor mauris, in hendrerit libero. </p>
-					</div>
+    <div class="inner">
+        <div class="box">
+            <div class="content">
+                <header class="align-center">
+                    <h2>Rete Elettrica Ferroviaria</h2>
+                </header>
+
+                <h3>Contesto e importanza strategica</h3>
+                <p>
+                    L’energia di trazione rappresenta il pilastro dell’efficienza ferroviaria moderna. In Italia, oltre il 70% della rete è elettrificata, con una progressiva estensione anche alle linee regionali. L’obiettivo è duplice: ridurre le emissioni e garantire un sistema di trasporto sempre più efficiente, interoperabile e sostenibile. L’elettrificazione non è solo un fattore tecnico, ma una scelta politica e ambientale, integrata nel piano europeo per la decarbonizzazione del trasporto su rotaia. Questo processo permette di ridurre la dipendenza dai combustibili fossili e di migliorare la qualità dell’aria nelle aree urbane attraversate dalle linee ferroviarie.
+                </p>
+
+                <h3>Come funziona il sistema di trazione</h3>
+                <p>
+                    L’energia elettrica necessaria ai treni viene prelevata dalla rete di trasmissione nazionale in alta tensione, trasformata in media tensione e infine distribuita alla rete di trazione tramite sottostazioni elettriche. La corrente raggiunge i treni tramite la catenaria, una linea aerea da cui il pantografo del treno preleva energia. Questo processo avviene in tempo reale, con continuità e precisione, garantendo la sicurezza e la regolarità del servizio ferroviario. Le sottostazioni elettriche svolgono un ruolo fondamentale, trasformando l’energia e immettendola nella linea di trazione. I cavi di alimentazione e ritorno assicurano la chiusura del circuito elettrico, mentre sistemi avanzati di diagnostica e telecontrollo monitorano costantemente tensioni, correnti, eventuali guasti e lo stato delle apparecchiature, permettendo interventi rapidi in caso di necessità.
+                </p>
+
+                <h3>Differenze tra corrente continua e alternata</h3>
+                <p>
+                    L’Italia ha adottato due sistemi di alimentazione per la rete ferroviaria. Il sistema a corrente continua, con una tensione di 3.000 Volt, è utilizzato principalmente sulla rete convenzionale, che comprende le linee regionali e intercity. Questo sistema è consolidato e diffuso, ma risulta meno efficiente per le alte potenze richieste dai treni più moderni e veloci. Per le linee ad alta velocità e i collegamenti internazionali, invece, si utilizza la corrente alternata a 25.000 Volt e 50 Hz. Questo sistema consente di ridurre le perdite su lunghe distanze, alimentare treni più veloci e migliorare l’efficienza complessiva dell’infrastruttura. La scelta tra i due sistemi dipende da fattori storici, tecnici e dalla necessità di garantire l’interoperabilità con le reti ferroviarie dei paesi confinanti.
+                </p>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>Tipo di rete</th>
+                                <th>Tensione e tipo di corrente</th>
+                                <th>Utilizzo principale</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Corrente continua (DC)</td>
+                                <td>3.000 Volt DC</td>
+                                <td>Rete convenzionale (regionale e intercity)</td>
+                            </tr>
+                            <tr>
+                                <td>Corrente alternata (AC)</td>
+                                <td>25.000 Volt AC – 50 Hz</td>
+                                <td>Linee Alta Velocità (AV) e collegamenti internazionali</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>
+                    Il sistema a 3 kV DC, pur essendo molto diffuso, mostra i suoi limiti sulle tratte dove sono richieste potenze elevate e velocità maggiori. La rete AV, invece, grazie all’adozione della corrente alternata, permette di aumentare la distanza tra le sottostazioni e di alimentare treni più leggeri e performanti, semplificando anche la struttura dei motori elettrici.
+                </p>
+
+                <h3>Il sistema AV: una rete ad alta potenza</h3>
+                <p>
+                    Le linee Alta Velocità, come la Milano–Roma–Napoli, sono alimentate a 25 kV in corrente alternata monofase a 50 Hz. Questo sistema consente di disporre di maggiori potenze, di ridurre le perdite di energia e di aumentare la distanza tra le sottostazioni. I treni AV sono progettati per essere più leggeri, grazie alla semplificazione dei motori, e possono percorrere lunghe tratte senza interruzioni. Ogni treno ad alta velocità è dotato di sistemi di autocommutazione tra i due regimi (DC/AC), in modo da poter circolare sia su linee AV sia su tratte convenzionali senza fermarsi. I punti di transizione, come quelli di Firenze Campo di Marte o Roma Prenestina, sono progettati per consentire il cambio di tensione in movimento, garantendo la continuità del servizio.
+                </p>
+
+                <h3>Il caso di Bordighera e l’interoperabilità</h3>
+                <p>
+                    Il nodo di Bordighera, sulla linea Genova–Ventimiglia, rappresenta un esempio unico di interoperabilità ferroviaria. Qui avviene il passaggio dalla rete italiana (3 kV DC) a quella francese (25 kV AC). I treni transfrontalieri, grazie a sofisticati sistemi di bordo multivoltaggio e software di gestione intelligente della trazione, sono in grado di abbassare il pantografo, modificare la configurazione interna della trazione e rialzare il pantografo collegandosi alla nuova tensione, tutto senza fermarsi. Le infrastrutture binazionali sono perfettamente sincronizzate per garantire la sicurezza e la regolarità del servizio internazionale.
+                </p>
+
+                <h3>Efficienza energetica e sostenibilità</h3>
+                <p>
+                    L’elettrificazione ferroviaria rappresenta anche una leva ambientale potente. Oltre a eliminare le emissioni dirette nei treni, i sistemi moderni permettono il recupero dell’energia di frenata, che può essere reimmessa in rete o utilizzata da altri convogli in transito. L’integrazione di fonti rinnovabili, come il fotovoltaico e l’idroelettrico, e l’adozione di sistemi di accumulo distribuiti e smart grid ferroviarie, contribuiscono a ridurre ulteriormente la dipendenza dai combustibili fossili e a migliorare la resilienza del sistema ferroviario nazionale.
+                </p>
+
+                <h3>Conclusione</h3>
+                <p>
+                    Il sistema di energia di trazione italiano è frutto di decenni di innovazione e adattamento tecnologico. Le sue architetture miste, le transizioni intelligenti tra DC e AC e l’integrazione con le reti AV e transfrontaliere ne fanno un modello di efficienza e sostenibilità a livello europeo. L’evoluzione continua di queste infrastrutture rappresenta una delle chiavi per il futuro della mobilità sostenibile in Italia e in Europa.
+                </p>
+            </div>
+        </div>
+        <div style="margin-top:40px;">
+            <h2 class="align-center">Mappa delle Linee Ferroviarie Principali</h2>
+            <div id="map" style="height: 90vh; width: 100%; margin-bottom: 20px;"></div>
+			<div class="legend" style="margin-top: 16px;">
+				<div style="display: flex; align-items: center; margin-bottom: 6px;">
+					<span style="display: inline-block; width: 18px; height: 18px; background: red; border: 1px solid #888; margin-right: 8px;"></span>
+					25 kV AC (Alta Velocità)
+				</div>
+				<div style="display: flex; align-items: center; margin-bottom: 6px;">
+					<span style="display: inline-block; width: 18px; height: 18px; background: blue; border: 1px solid #888; margin-right: 8px;"></span>
+					3 kV DC (Rete Convenzionale)
+				</div>
+				<div style="display: flex; align-items: center;">
+					<span style="display: inline-block; width: 18px; height: 18px; background: orange; border: 1px solid #888; margin-right: 8px;"></span>
+					Cambio tensione / Transizione
 				</div>
 			</div>
-		</section>
+        </div>
+    </div>
+</section>
 
 		<!-- Footer -->
 		<footer id="footer">
@@ -66,5 +142,166 @@
 		<script src="assets/js/skel.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+		<script>
+    // Mappa centrata sull'Italia, limiti e controlli
+    const map = L.map('map', {
+      center: [42.0, 12.5],
+      zoom: 6.7,
+      minZoom: 6.5,
+      maxZoom: 8,
+      maxBounds: [
+        [35.5, 5.5],   // Southwest
+        [47.2, 19.5]   // Northeast
+      ],
+      maxBoundsViscosity: 1.0,
+      zoomControl: true,
+      dragging: true,
+      scrollWheelZoom: false,
+      doubleClickZoom: false,
+      boxZoom: false,
+      keyboard: false,
+      touchZoom: false
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Linee principali con coordinate più dettagliate (semplificate ma più realistiche)
+    const linee = [
+      // AV Milano - Bologna - Firenze - Roma - Napoli - Salerno (25kV AC)
+      {
+        type: "Feature",
+        geometry: {
+          type: "LineString",
+          coordinates: [
+            [9.2025, 45.4846],   // Milano Centrale
+            [9.5222, 45.3217],   // Lodi
+            [10.2270, 44.9012],  // Piacenza
+            [10.6419, 44.6471],  // Parma
+            [10.9916, 44.4949],  // Reggio Emilia AV
+            [11.3426, 44.4949],  // Bologna Centrale
+            [11.4969, 44.1922],  // Sasso Marconi
+            [11.2558, 43.7696],  // Firenze S.M.N.
+            [11.9672, 43.3188],  // Chiusi
+            [12.4964, 41.9028],  // Roma Termini
+            [13.1628, 41.0758],  // Caserta
+            [14.2681, 40.8518],  // Napoli Centrale
+            [14.7866, 40.6782],  // Salerno
+          ]
+        },
+        properties: { nome: "Linea AV Milano-Napoli-Salerno", tensione: "25 kV AC", colore: "red" }
+      },
+
+      // AV Milano - Verona - Venezia (25kV AC)
+      {
+        type: "Feature",
+        geometry: {
+          type: "LineString",
+          coordinates: [
+            [9.2025, 45.4846],   // Milano Centrale
+            [9.5034, 45.6688],   // Treviglio
+            [10.9916, 45.4384],  // Verona Porta Nuova
+            [11.8768, 45.4064],  // Padova
+            [12.2451, 45.4937],  // Mestre
+            [12.3155, 45.4408],  // Venezia S.L.
+          ]
+        },
+        properties: { nome: "Linea AV Milano-Verona-Venezia", tensione: "25 kV AC", colore: "red" }
+      },
+
+      // Convenzionale Milano - Genova (3kV DC)
+      {
+        type: "Feature",
+        geometry: {
+          type: "LineString",
+          coordinates: [
+            [9.2025, 45.4846],   // Milano Centrale
+            [8.9444, 45.1847],   // Pavia
+            [8.8767, 44.9971],   // Voghera
+            [8.6140, 44.9110],   // Tortona
+            [8.6130, 44.6346],   // Arquata Scrivia
+            [8.9290, 44.4164],   // Genova Piazza Principe
+            [8.9290, 44.4071],   // Genova Brignole
+          ]
+        },
+        properties: { nome: "Linea Convenzionale Milano-Genova", tensione: "3 kV DC", colore: "blue" }
+      },
+
+      // Convenzionale Torino - Milano (3kV DC)
+      {
+        type: "Feature",
+        geometry: {
+          type: "LineString",
+          coordinates: [
+            [7.6698, 45.0686],   // Torino Porta Nuova
+            [8.0086, 45.3271],   // Chivasso
+            [8.6196, 45.5236],   // Novara
+            [9.2025, 45.4846],   // Milano Centrale
+          ]
+        },
+        properties: { nome: "Linea Convenzionale Torino-Milano", tensione: "3 kV DC", colore: "blue" }
+      },
+
+      // Convenzionale Roma - Napoli (3kV DC)
+      {
+        type: "Feature",
+        geometry: {
+          type: "LineString",
+          coordinates: [
+            [12.4964, 41.9028],  // Roma Termini
+            [13.3271, 41.7557],  // Frosinone
+            [13.8327, 41.1296],  // Cassino
+            [14.2681, 40.8518],  // Napoli Centrale
+          ]
+        },
+        properties: { nome: "Linea Convenzionale Roma-Napoli", tensione: "3 kV DC", colore: "blue" }
+      },
+
+      // Convenzionale Venezia - Trieste (3kV DC)
+      {
+        type: "Feature",
+        geometry: {
+          type: "LineString",
+          coordinates: [
+            [12.3155, 45.4408],  // Venezia S.L.
+            [13.7768, 45.6495],  // Trieste Centrale
+          ]
+        },
+        properties: { nome: "Linea Convenzionale Venezia-Trieste", tensione: "3 kV DC", colore: "blue" }
+      },
+
+      // Transizione Bordighera (Cambio tensione 3kV DC / 25kV AC)
+      {
+        type: "Feature",
+        geometry: {
+          type: "Point",
+          coordinates: [7.6800, 43.7850]
+        },
+        properties: { nome: "Cambio Tensione Bordighera", tensione: "Transizione 3kV DC / 25kV AC", colore: "orange" }
+      }
+    ];
+
+    // Disegna linee e punti sulla mappa
+    linee.forEach(feature => {
+      if(feature.geometry.type === "LineString") {
+        L.polyline(feature.geometry.coordinates.map(c => [c[1], c[0]]), {
+          color: feature.properties.colore,
+          weight: 5,
+          opacity: 0.92,
+        }).bindPopup(`<b>${feature.properties.nome}</b><br>Tensione: ${feature.properties.tensione}`)
+          .addTo(map);
+      } else if (feature.geometry.type === "Point") {
+        L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], {
+          radius: 10,
+          color: feature.properties.colore,
+          fillColor: feature.properties.colore,
+          fillOpacity: 0.95,
+        }).bindPopup(`<b>${feature.properties.nome}</b><br>${feature.properties.tensione}`)
+          .addTo(map);
+      }
+    });
+		</script>
 	</body>
 </html>
