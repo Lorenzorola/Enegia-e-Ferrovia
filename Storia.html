@@ -264,21 +264,73 @@
 								.timeline-container { max-width: 99vw; }
 							}
 							@media (max-width: 600px) {
-								.timeline-container { height: 180px; }
-								.timeline-rail, .timeline-rail2 { right: 30px; }
+								.timeline-container {
+									height: 210px;
+									max-width: 99vw;
+								}
+								.timeline-rail, .timeline-rail2 {
+									right: 0;
+									left: 0;
+									width: 100%;
+									min-width: 0;
+								}
 								.timeline-bar { top: 100px; height: 5px; }
-								.timeline-point { width: 18px; height: 18px; top: 93px; }
-								.timeline-point .timeline-year { top: 28px; font-size: 0.95em; padding: 2px 5px; }
+								.timeline-point {
+									width: 22px;
+									height: 22px;
+									top: 110px;
+								}
+								.timeline-point .timeline-year {
+									top: 28px;
+									font-size: 0.95em;
+									padding: 2px 5px;
+									white-space: normal;
+									max-width: 60px;
+									word-break: break-word;
+								}
 								.timeline-arrow {
-									width: 36px;
-									height: 28px;
-									top: 88px;
-									right: -14px;
+									width: 28px;
+									height: 22px;
+									top: 110px;
+									right: -10px;
 								}
 								.timeline-arrow::after {
-									border-top: 14px solid transparent;
-									border-bottom: 14px solid transparent;
-									border-left: 24px solid #44484d;
+									border-top: 11px solid transparent;
+									border-bottom: 11px solid transparent;
+									border-left: 18px solid #44484d;
+								}
+								.timeline-point::after {
+									font-size: 0.95em;
+									max-width: 90vw;
+									white-space: normal;
+									padding: 8px 10px;
+									bottom: 38px;
+								}
+							}
+							@media (max-width: 400px) {
+								.timeline-container {
+									height: 250px;
+								}
+								.timeline-point {
+									width: 16px;
+									height: 16px;
+									top: 130px;
+								}
+								.timeline-point .timeline-year {
+									top: 20px;
+									font-size: 0.85em;
+									max-width: 40px;
+								}
+								.timeline-arrow {
+									width: 18px;
+									height: 14px;
+									top: 130px;
+									right: -6px;
+								}
+								.timeline-arrow::after {
+									border-top: 7px solid transparent;
+									border-bottom: 7px solid transparent;
+									border-left: 12px solid #44484d;
 								}
 							}
 						</style>
