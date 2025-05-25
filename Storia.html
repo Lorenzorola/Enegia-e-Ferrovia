@@ -236,26 +236,24 @@
 							}
 							.timeline-point::after {
 								content: attr(data-tooltip);
-								position: absolute;
-								bottom: 38px;
+								position: fixed;
+								bottom: 16%;
 								left: 50%;
 								transform: translateX(-50%);
-								background: #111; /* nero */
+								background: #111;
 								color: #fff;
 								padding: 12px 18px;
 								border-radius: 8px;
 								font-size: 1em;
-								white-space: nowrap;
+								white-space: normal;
 								opacity: 0;
 								pointer-events: none;
 								transition: opacity 0.2s;
-								z-index: 10;
+								z-index: 9999;
 								box-shadow: 0 2px 12px rgba(0,0,0,0.18);
 								border: 1px solid #006699;
-							}
-							.timeline-point:hover {
-								background: #005080;
-								box-shadow: 0 0 0 7px #005080;
+								max-width: 90vw;
+								text-align: center;
 							}
 							.timeline-point:hover::after {
 								opacity: 1;
@@ -298,13 +296,6 @@
 									border-top: 11px solid transparent;
 									border-bottom: 11px solid transparent;
 									border-left: 18px solid #44484d;
-								}
-								.timeline-point::after {
-									font-size: 0.95em;
-									max-width: 90vw;
-									white-space: normal;
-									padding: 8px 10px;
-									bottom: 38px;
 								}
 							}
 							@media (max-width: 400px) {
