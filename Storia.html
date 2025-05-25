@@ -101,15 +101,33 @@
 						<h3>Timeline sintetica</h3>
 						<div class="timeline-outer">
 							<div class="timeline-container">
-								<div class="timeline-bar"></div>
+								<!-- Binario (due barre parallele) -->
+								<div class="timeline-rail"></div>
+								<div class="timeline-rail timeline-rail2"></div>
+								<!-- Freccia finale -->
+								<div class="timeline-arrow"></div>
 								<!-- Punti della timeline distanziati e uniformi -->
-								<span class="timeline-point" style="left:0%;" data-tooltip="1902: Prima elettrificazione al mondo sulla linea della Valtellina (trifase 3.000 V, 15 Hz)"></span>
-								<span class="timeline-point" style="left:16.6%;" data-tooltip="Anni ’20-’30: Espansione del trifase e introduzione della corrente continua a 3.000 V"></span>
-								<span class="timeline-point" style="left:33.3%;" data-tooltip="1931: Prima grande linea a 3.000 V CC: Milano-Torino"></span>
-								<span class="timeline-point" style="left:50%;" data-tooltip="Anni ’50-’70: Estensione della corrente continua a tutta la rete principale"></span>
-								<span class="timeline-point" style="left:66.6%;" data-tooltip="1988: Inaugurazione della Direttissima Roma-Firenze (prima AV italiana)"></span>
-								<span class="timeline-point" style="left:83.3%;" data-tooltip="2005-2009: Apertura delle linee AV a 25 kV AC"></span>
-								<span class="timeline-point" style="left:100%;" data-tooltip="Oggi: Innovazione, sostenibilità, smart grid e fonti rinnovabili"></span>
+								<span class="timeline-point" style="left:0%;" data-tooltip="1902: Prima elettrificazione al mondo sulla linea della Valtellina (trifase 3.000 V, 15 Hz)">
+									<span class="timeline-year">1902</span>
+								</span>
+								<span class="timeline-point" style="left:16.6%;" data-tooltip="Anni ’20-’30: Espansione del trifase e introduzione della corrente continua a 3.000 V">
+									<span class="timeline-year">’20-’30</span>
+								</span>
+								<span class="timeline-point" style="left:33.3%;" data-tooltip="1931: Prima grande linea a 3.000 V CC: Milano-Torino">
+									<span class="timeline-year">1931</span>
+								</span>
+								<span class="timeline-point" style="left:50%;" data-tooltip="Anni ’50-’70: Estensione della corrente continua a tutta la rete principale">
+									<span class="timeline-year">’50-’70</span>
+								</span>
+								<span class="timeline-point" style="left:66.6%;" data-tooltip="1988: Inaugurazione della Direttissima Roma-Firenze (prima AV italiana)">
+									<span class="timeline-year">1988</span>
+								</span>
+								<span class="timeline-point" style="left:83.3%;" data-tooltip="2005-2009: Apertura delle linee AV a 25 kV AC">
+									<span class="timeline-year">2005-09</span>
+								</span>
+								<span class="timeline-point" style="left:100%;" data-tooltip="Oggi: Innovazione, sostenibilità, smart grid e fonti rinnovabili">
+									<span class="timeline-year">Oggi</span>
+								</span>
 							</div>
 						</div>
 						<style>
@@ -125,36 +143,90 @@
 								margin-left: auto;
 								margin-right: auto;
 								user-select: none;
-								height: 110px;
+								height: 130px;
 								position: relative;
 							}
-							.timeline-bar {
+							.timeline-rail,
+							.timeline-rail2 {
 								position: absolute;
-								top: 65px;
 								left: 0;
-								right: 0;
+								right: 40px;
 								height: 6px;
-								background: #44484d; /* grigio scuro */
+								background: #44484d;
 								border-radius: 3px;
 								box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+								z-index: 1;
+							}
+							.timeline-rail {
+								top: 62px;
+							}
+							.timeline-rail2 {
+								top: 74px;
+							}
+							.timeline-arrow {
+								position: absolute;
+								right: 0;
+								top: 62px;
+								width: 40px;
+								height: 18px;
+								z-index: 2;
+								pointer-events: none;
+							}
+							.timeline-arrow::after {
+								content: '';
+								position: absolute;
+								left: 0;
+								top: 0;
+								width: 0;
+								height: 0;
+								border-top: 9px solid transparent;
+								border-bottom: 9px solid transparent;
+								border-left: 24px solid #44484d;
 							}
 							.timeline-point {
 								position: absolute;
 								top: 56px;
 								width: 28px;
 								height: 28px;
-								background: #44484d; /* grigio scuro */
+								background: #44484d;
 								border-radius: 50%;
 								border: 4px solid #fff;
 								box-shadow: 0 0 0 3px #44484d;
 								cursor: pointer;
 								transform: translateX(-50%);
 								transition: background 0.2s, box-shadow 0.2s;
-								z-index: 2;
+								z-index: 3;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								flex-direction: column;
 							}
-							.timeline-point:hover {
-								background: #005080;
-								box-shadow: 0 0 0 7px #005080;
+							.timeline-point .timeline-year {
+								position: absolute;
+								top: 38px;
+								left: 50%;
+								transform: translateX(-50%);
+								margin: 0;
+								font-size: 1em;
+								color: #44484d;
+								font-weight: bold;
+								text-align: center;
+								letter-spacing: 0.02em;
+								background: #fff;
+								padding: 2px 8px;
+								border-radius: 6px;
+								box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+								z-index: 4;
+								white-space: nowrap;
+								/* sposta la data sotto la pallina */
+								top: 38px;
+							}
+							/* Sposta la data sotto la pallina */
+							.timeline-point .timeline-year {
+								top: 38px;
+							}
+							.timeline-point:last-child .timeline-year {
+								white-space: nowrap;
 							}
 							.timeline-point::after {
 								content: attr(data-tooltip);
@@ -175,6 +247,10 @@
 								box-shadow: 0 2px 12px rgba(0,0,0,0.18);
 								border: 1px solid #006699;
 							}
+							.timeline-point:hover {
+								background: #005080;
+								box-shadow: 0 0 0 7px #005080;
+							}
 							.timeline-point:hover::after {
 								opacity: 1;
 							}
@@ -182,9 +258,11 @@
 								.timeline-container { max-width: 99vw; }
 							}
 							@media (max-width: 600px) {
-								.timeline-container { height: 160px; }
+								.timeline-container { height: 180px; }
+								.timeline-rail, .timeline-rail2 { right: 30px; }
 								.timeline-bar { top: 100px; height: 5px; }
 								.timeline-point { width: 18px; height: 18px; top: 93px; }
+								.timeline-point .timeline-year { top: 28px; font-size: 0.95em; padding: 2px 5px; }
 								.timeline-point::after { font-size: 0.95em; max-width: 90vw; white-space: normal; padding: 8px 10px; }
 							}
 						</style>
