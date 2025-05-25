@@ -166,22 +166,27 @@
 							.timeline-arrow {
 								position: absolute;
 								right: 0;
-								top: 62px;
-								width: 40px;
-								height: 18px;
+								top: 55px; /* poco più su rispetto alla rail */
+								width: 55px;
+								height: 32px;
 								z-index: 2;
 								pointer-events: none;
+								display: flex;
+								align-items: center;
+								justify-content: flex-start;
 							}
 							.timeline-arrow::after {
 								content: '';
+								display: block;
 								position: absolute;
 								left: 0;
 								top: 0;
 								width: 0;
 								height: 0;
-								border-top: 9px solid transparent;
-								border-bottom: 9px solid transparent;
-								border-left: 24px solid #44484d;
+								border-top: 16px solid transparent;
+								border-bottom: 16px solid transparent;
+								border-left: 32px solid #44484d;
+								margin-left: 8px;
 							}
 							.timeline-point {
 								position: absolute;
@@ -201,6 +206,10 @@
 								align-items: center;
 								flex-direction: column;
 							}
+							.timeline-point:last-child {
+								/* accorcia la linea per lasciare spazio alla freccia */
+								right: 32px;
+							}
 							.timeline-point .timeline-year {
 								position: absolute;
 								top: 38px;
@@ -218,10 +227,7 @@
 								box-shadow: 0 1px 4px rgba(0,0,0,0.07);
 								z-index: 4;
 								white-space: nowrap;
-								/* sposta la data sotto la pallina */
-								top: 38px;
 							}
-							/* Sposta la data sotto la pallina */
 							.timeline-point .timeline-year {
 								top: 38px;
 							}
@@ -263,7 +269,17 @@
 								.timeline-bar { top: 100px; height: 5px; }
 								.timeline-point { width: 18px; height: 18px; top: 93px; }
 								.timeline-point .timeline-year { top: 28px; font-size: 0.95em; padding: 2px 5px; }
-								.timeline-point::after { font-size: 0.95em; max-width: 90vw; white-space: normal; padding: 8px 10px; }
+								.timeline-arrow {
+									width: 36px;
+									height: 28px;
+									top: 88px;
+									right: -14px;
+								}
+								.timeline-arrow::after {
+									border-top: 14px solid transparent;
+									border-bottom: 14px solid transparent;
+									border-left: 24px solid #44484d;
+								}
 							}
 						</style>
 
